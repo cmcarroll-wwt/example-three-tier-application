@@ -1,0 +1,27 @@
+# Copy this file to terraform.tfvars and fill in the values.
+# Never commit terraform.tfvars — it contains sensitive configuration.
+
+project_id  = "my-gcp-project-id"
+region      = "us-central1"
+app_name    = "todo"
+environment = "dev"
+
+# Cloud SQL
+db_tier = "db-f1-micro" # use db-g1-small or db-custom-* for prod
+
+# Container images — build and push these before applying:
+#   docker build -t gcr.io/$PROJECT/api:latest ./src/api
+#   docker build -t gcr.io/$PROJECT/web:latest ./src/web
+#   docker build -t gcr.io/$PROJECT/db:latest  ./src/db
+#   docker push gcr.io/$PROJECT/api:latest
+#   docker push gcr.io/$PROJECT/web:latest
+#   docker push gcr.io/$PROJECT/db:latest
+api_image = "gcr.io/my-gcp-project-id/api:latest"
+web_image = "gcr.io/my-gcp-project-id/web:latest"
+db_image  = "gcr.io/my-gcp-project-id/db:latest"
+
+# Optional overrides
+# subnet_cidr       = "10.0.0.0/24"
+# connector_cidr    = "10.0.1.0/28"
+# api_max_instances = 10
+# web_max_instances = 10
