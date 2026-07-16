@@ -130,3 +130,7 @@ DATABASE_URL=postgres://app:app@localhost:5432/app npx node-pg-migrate down
 ```
 
 When running via Docker Compose the `migrate` service handles this automatically on startup.
+
+## Testing
+
+No automated tests are currently configured. To add tests, install a test framework (e.g., Jest, Vitest) in the relevant service directory and add a `test` script to `package.json`. For integration tests, start the stack with `docker compose up` and test against `http://localhost:3000` (web) or the API through the web container.
