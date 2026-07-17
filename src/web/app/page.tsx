@@ -1,4 +1,5 @@
 import { getTasks, createTask, toggleTask } from './actions';
+import Link from 'next/link';
 
 export default async function Home() {
   const tasks = await getTasks();
@@ -6,9 +7,17 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 py-16 px-4">
       <div className="max-w-lg mx-auto">
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
-          To-Do List
-        </h1>
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+            To-Do List
+          </h1>
+          <Link
+            href="/snake"
+            className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors text-sm font-medium"
+          >
+            🎮 Play Snake
+          </Link>
+        </div>
 
         {/* Add task form */}
         <form action={createTask} className="flex gap-2 mb-8">
