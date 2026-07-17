@@ -128,3 +128,5 @@ Before you make any changes, explain your plan for adding user authentication to
 - **The API is internal** — it's not exposed outside the Docker network; all external traffic goes through the web tier.
 - **Environment variables are the config boundary** — connection strings, ports, and URLs are all passed via env vars. No hardcoded values.
 - **Node 22 / PostgreSQL 17** — match these versions in any new Dockerfiles or dependencies.
+
+Built with AI
